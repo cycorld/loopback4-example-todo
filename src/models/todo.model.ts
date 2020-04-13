@@ -4,6 +4,7 @@
 // License text available at https://opensource.org/licenses/MIT
 
 import { Entity, model, property } from '@loopback/repository';
+import { Extras } from './extras.model';
 
 @model()
 export class Todo extends Entity {
@@ -46,6 +47,11 @@ export class Todo extends Entity {
   })
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   tag?: any;
+
+  @property({
+    type: Extras,
+  })
+  info?: Extras;
 
   constructor(data?: Partial<Todo>) {
     super(data);
